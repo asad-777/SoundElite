@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luxury Audio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      .hover-underline-animation {
+        display: inline-block;
+        position: relative;
+        color: black;
+      }
+
+      .hover-underline-animation::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 1px;
+        bottom: -4px;
+        left: 0;
+        background-color: black;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+      }
+
+      .hover-underline-animation:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
+    </style>
+    <!-- <script>
+      // JavaScript for dynamic cart functionality
+      document.addEventListener("DOMContentLoaded", () => {
+        const cart = [];
+        const cartCount = document.getElementById("cart-count");
+        const cartItems = document.getElementById("cart-items");
+
+        const updateCart = () => {
+          cartCount.textContent = cart.length;
+          if (cart.length === 0) {
+            cartItems.innerHTML =
+              '<p class="text-gray-500 text-sm">Cart is empty</p>';
+          } else {
+            cartItems.innerHTML = cart
+              .map(
+                (item) => `
+                <div class="flex justify-between items-center py-2">
+                  <p class="text-sm">${item.name}</p>
+                  <p class="text-sm font-bold">$${item.price}</p>
+                </div>
+              `
+              )
+              .join("");
+          }
+        };
+
+        document.querySelectorAll(".add-to-cart").forEach((button) =>
+          button.addEventListener("click", (e) => {
+            const product = {
+              name: e.target.dataset.name,
+              price: e.target.dataset.price,
+            };
+            cart.push(product);
+            updateCart();
+          })
+        );
+
+        updateCart();
+      });
+    </script> -->
+  </head>
+  <body class="bg-gray-50">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-16 py-4">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex-shrink-0 flex items-center">
+            <h1
+              class="text-3xl hover-underline-animation font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600"
+            >
+              SoundElite Pro
+            </h1>
+          </div>
+          <div class="flex items-center space-x-4">
+            <div class="hidden md:flex space-x-8">
+              <a
+                href="#products"
+                class="text-gray-600 hover-underline-animation hover:text-blue-600 transition"
+                >Shop</a
+              >
+              <a
+                href="#reviews"
+                class="text-gray-600 hover-underline-animation hover:text-blue-600 transition"
+                >Reviews</a
+              >
+            </div>
+            <div class="relative ml-16" id="cart-container">
+              <button class="p-2 rounded-full hover:bg-gray-100 relative group">
+                <i class="fas fa-shopping-cart text-gray-600 text-xl"></i>
+                <span
+                  id="cart-count"
+                  class="absolute -top-1 -right-1 bg-red-500 text-white rounded-full w-5 h-5 text-xs flex items-center justify-center"
+                >
+                  0
+                </span>
+                <div
+                  class="hidden group-hover:block absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-xl p-8 border-2"
+                >
+                  <p class="text-sm font-bold">Your Cart</p>
+                  <div id="cart-items" class="mt-2">
+                    <p class="text-gray-500 text-sm">Cart is empty</p>
+                  </div>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      class="relative overflow-hidden bg-gradient-to-r from-blue-600 to-purple-700 pt-16 pb-24"
+    >
+      <div
+        class="absolute inset-0 bg-[url('https://cdn.mos.cms.futurecdn.net/4hU7T5fQYWbnU5vxHZnAZE-1200-80.jpg')] opacity-10 bg-cover bg-center"
+      ></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div
+          class="flex flex-col md:flex-row items-center justify-between py-12"
+        >
+          <div class="md:w-1/2 text-white">
+            <h2 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
+              Premium Sound.<br />
+              <span class="text-yellow-400">Unbeatable Price.</span>
+            </h2>
+            <p class="text-xl mb-8 opacity-90">
+              Experience studio-quality sound with our premium wireless
+              headphones. Used by professional artists worldwide. Ultra fast
+              delivery within 2 days.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a
+              href="#products"
+                class="bg-yellow-400 text-gray-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-yellow-300 transition transform hover:scale-105"
+              >
+                Shop Now →
+            </a>
+              <div class="flex items-center space-x-2 text-sm">
+                <i class="fas fa-shield-alt"></i>
+                <span>1 Year Guarantee</span>
+              </div>
+            </div>
+            <div class="mt-8 flex items-center space-x-4">
+              <div class="flex -space-x-2">
+                <img
+                  src="https://static.vecteezy.com/system/resources/thumbnails/040/283/796/small/ai-generated-a-beautiful-pakistani-girl-free-photo.jpg"
+                  class="w-10 h-10 rounded-full border-2 border-transparent"
+                  alt="User"
+                />
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQo1SH8ZlXGqAjSIVJtq_PDsW4_UXIYUkb1zA&s"
+                  class="w-10 h-10 rounded-full border-2 border-transparent"
+                  alt="User"
+                />
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiwYpnwKj9FsXojwozUEL-jAv16Ch4cQ3BWA&s"
+                  class="w-10 h-10 rounded-full border-2 border-transparent"
+                  alt="User"
+                />
+              </div>
+              <p class="text-sm">
+                <span class="font-bold">397+ happy customers</span>
+                <br />Rated ⭐️⭐️⭐️⭐️⭐️ (4.9/5)
+              </p>
+            </div>
+          </div>
+          <div class="md:w-1/2 mt-12 md:mt-0 relative">
+            <div class="relative">
+              <img
+                src="./static/headphones.png"
+                alt="Premium Headphones"
+                class="rounded-lg transform hover:scale-105 transition duration-500"
+                style="filter: drop-shadow(15px 15px 15px black)"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-20">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold mb-4">Choose Your Perfect Match</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            All our products come with a 1-year warranty. Free Fast shipping on
+            all orders, receive product within 2 days!
+          </p>
+        </div>
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-8"
+          id="products-grid"
+        >
+          <!-- Example Product -->
+          <div
+            class="bg-white p-6 rounded-lg shadow-lg hover:scale-110 hover:shadow-xl duration-300"
+          >
+            <img
+              src="https://globalcomputers.pk/wp-content/uploads/2023/10/Buy-Tronsmart-Bang-Mini-Portable-Bluetooth-Speaker-in-Pakistan-at-Dab-Lew-Tech-1-400x400-1.jpg"
+              alt="Product Image"
+              class="w-full h-48 object-cover mb-4 rounded-lg"
+            />
+            <h3 class="text-xl font-bold mb-2">Portable Speakers</h3>
+            <p class="text-gray-600 mb-4">
+              Experience unparalleled sound quality with our premium headphones.
+            </p>
+            <div class="flex justify-between items-center mb-4">
+              <span class="text-xl font-bold">Pkr 3200</span>
+              <button
+                class="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-500 transition add-to-cart"
+                data-name="Premium Headphones"
+                data-price="99.99"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="bg-white p-6 rounded-lg shadow-lg hover:scale-110 hover:shadow-xl duration-300"
+          >
+            <img
+              src="https://imageio.forbes.com/specials-images/imageserve/61f400bcd5bafa83659a18bf/Apple-AirPods-Pro/960x0.jpg?format=jpg&width=960"
+              alt="Product Image"
+              class="w-full h-48 object-cover mb-4 rounded-lg"
+            />
+            <h3 class="text-xl font-bold mb-2">Apple Airpods</h3>
+            <p class="text-gray-600 mb-4">
+              Experience unparalleled sound quality with our premium headphones.
+            </p>
+            <div class="flex justify-between items-center mb-4">
+              <span class="text-xl font-bold">Pkr 2200</span>
+              <button
+                class="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-500 transition add-to-cart"
+                data-name="Premium Headphones"
+                data-price="99.99"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="bg-white p-6 rounded-lg shadow-lg hover:scale-110 hover:shadow-xl duration-300"
+          >
+            <img
+              src="https://qmart.pk/wp-content/uploads/2024/12/Apple-Airpods-Max-Black-Qmart.jpg"
+              alt="Product Image"
+              class="w-full h-48 object-cover mb-4 rounded-lg"
+            />
+            <h3 class="text-xl font-bold mb-2">P9 Headphones</h3>
+            <p class="text-gray-600 mb-4">
+              Experience unparalleled sound quality with our premium headphones.
+            </p>
+            <div class="flex justify-between items-center mb-4">
+              <span class="text-xl font-bold">Pkr 1600</span>
+              <button
+                class="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-500 transition add-to-cart"
+                data-name="Premium Headphones"
+                data-price="99.99"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <!-- More products can be added similarly -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-gray-100">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold mb-4">Why Choose SoundElite Pro?</h2>
+          <p class="text-gray-600">
+            Experience the difference that sets us apart
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 px-8">
+          <div
+            class="bg-white p-8 rounded-xl shadow-lg transform hover:scale-105 transition"
+          >
+            <div class="text-blue-600 mb-4">
+              <i class="fas fa-battery-full text-4xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4">
+              5-6 Hr Battery Life per charge
+            </h3>
+            <p class="text-gray-600">
+              Industry-leading battery life that keeps you going for hours.
+              Quick charge technology: 5 minutes = 2 hours of playback.
+            </p>
+          </div>
+          <div
+            class="bg-white p-8 rounded-xl shadow-lg transform hover:scale-105 transition"
+          >
+            <div class="text-blue-600 mb-4">
+              <i class="fas fa-microchip text-4xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4">Hi-Fi Sound Quality</h3>
+            <p class="text-gray-600">
+              40mm dynamic drivers deliver crystal clear highs and deep,
+              powerful bass. Studio-quality sound signature.
+            </p>
+          </div>
+          <div
+            class="bg-white p-8 rounded-xl shadow-lg transform hover:scale-105 transition"
+          >
+            <div class="text-blue-600 mb-4">
+              <i class="fas fa-wind text-4xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4">Quad Mic Technology</h3>
+            <p class="text-gray-600">
+              Advanced Quad Mic technology ensures crystal clear voice over
+              calls!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="reviews" class="py-20">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-16">
+          What Our Customers Say
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-8">
+          <div
+            class="bg-white p-8 rounded-xl shadow-lg hover:scale-105 hover:shadow-xl duration-300"
+          >
+            <div class="flex items-center mb-4">
+              <img
+                src="https://via.placeholder.com/48"
+                alt="Customer"
+                class="w-12 h-12 rounded-full"
+              />
+              <div class="ml-4">
+                <h4 class="font-bold">Sarah Johnson</h4>
+                <div class="text-yellow-400">★★★★★</div>
+              </div>
+            </div>
+            <p class="text-gray-600 italic">
+              "I'm absolutely blown away by the sound quality! These headphones
+              rival my $500 pair but at a fraction of the cost. The battery life
+              is incredible too!"
+            </p>
+            <div class="mt-4 text-sm text-gray-500">Verified Buyer</div>
+          </div>
+
+          <div
+            class="bg-white p-8 rounded-xl shadow-lg hover:scale-105 hover:shadow-xl duration-300"
+          >
+            <div class="flex items-center mb-4">
+              <img
+                src="https://via.placeholder.com/48"
+                alt="Customer"
+                class="w-12 h-12 rounded-full"
+              />
+              <div class="ml-4">
+                <h4 class="font-bold">Sarah Johnson</h4>
+                <div class="text-yellow-400">★★★★★</div>
+              </div>
+            </div>
+            <p class="text-gray-600 italic">
+              "I'm absolutely blown away by the sound quality! These headphones
+              rival my $500 pair but at a fraction of the cost. The battery life
+              is incredible too!"
+            </p>
+            <div class="mt-4 text-sm text-gray-500">Verified Buyer</div>
+          </div>
+
+          <div
+            class="bg-white p-8 rounded-xl shadow-lg hover:scale-105 hover:shadow-xl duration-300"
+          >
+            <div class="flex items-center mb-4">
+              <img
+                src="https://via.placeholder.com/48"
+                alt="Customer"
+                class="w-12 h-12 rounded-full"
+              />
+              <div class="ml-4">
+                <h4 class="font-bold">Sarah Johnson</h4>
+                <div class="text-yellow-400">★★★★★</div>
+              </div>
+            </div>
+            <p class="text-gray-600 italic">
+              "I'm absolutely blown away by the sound quality! These headphones
+              rival my $500 pair but at a fraction of the cost. The battery life
+              is incredible too!"
+            </p>
+            <div class="mt-4 text-sm text-gray-500">Verified Buyer</div>
+          </div>
+
+          <!-- More testimonials similar to above -->
+        </div>
+      </div>
+    </section>
+    <!-- CTA Section 
+    <section class="bg-gradient-to-r from-blue-600 to-purple-700 py-20">
+      <div class="max-w-7xl mx-auto px-4 text-center">
+        <h2 class="text-4xl font-bold text-white mb-8">
+          Don't Miss Out on This Limited Time Offer!
+        </h2>
+        <p class="text-xl text-white mb-8 opacity-90">
+          Get 50% off + Free Shipping + 30-Day Money Back Guarantee
+        </p>
+        <button
+          class="bg-yellow-400 text-gray-900 px-12 py-4 rounded-full font-bold text-xl hover:bg-yellow-300 transition transform hover:scale-105"
+        >
+          Shop Now - Save 50% →
+        </button>
+      </div>
+    </section>
+    -->
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+      <div class="max-w-7xl mx-auto px-16">
+        <div class="lg:flex lg:justify-between lg:px-16 px-2">
+          <div class="lg:w-1/2">
+            <h3 class="text-xl text-center font-bold mb-4">SoundElite Pro</h3>
+            <p class="text-gray-400 text-center">
+              Premium audio experiences at unbeatable prices and fast doorstep
+              delivery. Free shipping all across Pakistan.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="mt-8 lg:mt-0 text-xl font-bold mb-4 text-center">Contact</h3>
+            <ul
+              class="space-y-2 text-gray-400 hover:text-white duration-300 text-center"
+            >
+            <li>
+                <i class="fas fa-map-marker-alt mr-2"></i> Lahore, Pakistan
+              </li>
+              <li>
+                  <li><i class="fas fa-phone mr-2"></i> +92-307-9017268</li>
+                    <i class="fas fa-envelope mr-2"></i>
+                    muhammadasad7.7.2007@gmail.com
+                  </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400"
+        >
+          <p>© 2025 SoundElite Pro. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
