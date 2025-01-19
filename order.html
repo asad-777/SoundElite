@@ -76,15 +76,58 @@
         <!-- Google Form Section -->
         <div class="bg-white p-6 rounded-lg shadow-lg">
           <h2 class="text-2xl font-bold mb-6">Complete Your Order</h2>
-          <iframe
-            src="YOUR_GOOGLE_FORM_EMBED_URL"
-            class="w-full h-[800px]"
-            frameborder="0"
-            marginheight="0"
-            marginwidth="0"
-          >
-            Loading…
-          </iframe>
+          <form class="bg-white p-6 rounded-lg shadow-lg">
+            <h2 class="text-2xl font-bold mb-6">Complete Your Order</h2>
+
+            <div class="mb-4">
+              <input
+                type="text"
+                name="customerName"
+                placeholder="Customer Name"
+                required
+                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+              />
+            </div>
+            <input type="hidden" name="productName" id="productName" />
+            <input type="hidden" name="productPrice" id="productPrice" />
+
+            <div class="mb-4">
+              <input
+                type="text"
+                name="customerAddress"
+                placeholder="Customer's Address"
+                required
+                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+              />
+            </div>
+
+            <div class="mb-4">
+              <input
+                type="tel"
+                name="whatsappNumber"
+                placeholder="Active WhatsApp Number"
+                required
+                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+              />
+            </div>
+
+            <div class="mb-6">
+              <input
+                type="email"
+                name="customerEmail"
+                placeholder="Customer Email ID"
+                required
+                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+              />
+            </div>
+
+            <button
+              type="submit"
+              class="w-full py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600"
+            >
+              Submit Order
+            </button>
+          </form>
         </div>
 
         <!-- Receipt Section -->
@@ -193,6 +236,13 @@
       // Update totals
       document.getElementById("subtotal").textContent = `PKR ${itemPrice}`;
       document.getElementById("total").textContent = `PKR ${itemPrice}`;
+
+      // Set hidden input values in the form before submission
+      document.getElementById("productName").value = itemName;
+      document.getElementById("productPrice").value = itemPrice;
+      // Ensure product details are set in the hidden fields before submitting
+      document.getElementById("productName").value = itemName;
+      document.getElementById("productPrice").value = itemPrice;
     </script>
   </body>
 </html>
