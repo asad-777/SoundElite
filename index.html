@@ -34,46 +34,6 @@
         transform-origin: bottom left;
       }
     </style>
-    <!-- <script>
-      // JavaScript for dynamic cart functionality
-      document.addEventListener("DOMContentLoaded", () => {
-        const cart = [];
-        const cartCount = document.getElementById("cart-count");
-        const cartItems = document.getElementById("cart-items");
-
-        const updateCart = () => {
-          cartCount.textContent = cart.length;
-          if (cart.length === 0) {
-            cartItems.innerHTML =
-              '<p class="text-gray-500 text-sm">Cart is empty</p>';
-          } else {
-            cartItems.innerHTML = cart
-              .map(
-                (item) => `
-                <div class="flex justify-between items-center py-2">
-                  <p class="text-sm">${item.name}</p>
-                  <p class="text-sm font-bold">$${item.price}</p>
-                </div>
-              `
-              )
-              .join("");
-          }
-        };
-
-        document.querySelectorAll(".add-to-cart").forEach((button) =>
-          button.addEventListener("click", (e) => {
-            const product = {
-              name: e.target.dataset.name,
-              price: e.target.dataset.price,
-            };
-            cart.push(product);
-            updateCart();
-          })
-        );
-
-        updateCart();
-      });
-    </script> -->
   </head>
   <body class="bg-gray-50">
     <!-- Navbar -->
@@ -81,44 +41,25 @@
       <div class="max-w-7xl mx-auto px-16 py-4">
         <div class="flex justify-between items-center h-16">
           <div class="flex-shrink-0 flex items-center">
-            <h1
-              class="text-3xl hover-underline-animation font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600"
+            <a href="index.html"><h1
+              class="text-3xl hover-underline-animation font-extrabold  text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600"
             >
               SoundElite Pro
-            </h1>
+            </h1></a>
           </div>
-          <div class="flex items-center space-x-4">
-            <div class="hidden md:flex space-x-8">
-              <a
-                href="#products"
-                class="text-gray-600 hover-underline-animation hover:text-blue-600 transition"
-                >Shop</a
-              >
-              <a
-                href="#reviews"
-                class="text-gray-600 hover-underline-animation hover:text-blue-600 transition"
-                >Reviews</a
-              >
-            </div>
-            <div class="relative ml-16" id="cart-container">
-              <button class="p-2 rounded-full hover:bg-gray-100 relative group">
-                <i class="fas fa-shopping-cart text-gray-600 text-xl"></i>
-                <span
-                  id="cart-count"
-                  class="absolute -top-1 -right-1 bg-red-500 text-white rounded-full w-5 h-5 text-xs flex items-center justify-center"
-                >
-                  0
-                </span>
-                <div
-                  class="hidden group-hover:block absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-xl p-8 border-2"
-                >
-                  <p class="text-sm font-bold">Your Cart</p>
-                  <div id="cart-items" class="mt-2">
-                    <p class="text-gray-500 text-sm">Cart is empty</p>
-                  </div>
-                </div>
-              </button>
-            </div>
+<div class="flex items-center space-x-4">
+  <div class="hidden md:flex space-x-8">
+    <a href="#products" class="text-gray-600 hover-underline-animation hover:text-blue-600 transition flex items-center space-x-2">
+      <i class="fas fa-shopping-cart"></i>
+      <span>Shop</span>
+    </a>
+    <a href="#reviews" class="text-gray-600 hover-underline-animation hover:text-blue-600 transition flex items-center space-x-2">
+      <i class="fas fa-star"></i>
+      <span>Reviews</span>
+    </a>
+  </div>
+</div>
+
           </div>
         </div>
       </div>
@@ -211,7 +152,7 @@
           id="products-grid"
         >
           <!-- Example Product -->
-          <div
+          <a href="order.html?itemName=pan%20yki&itemPrice=6969"><div
             class="bg-white p-6 rounded-lg shadow-lg hover:scale-110 hover:shadow-xl duration-300"
           >
             <img
@@ -230,12 +171,12 @@
                 data-name="Premium Headphones"
                 data-price="99.99"
               >
-                Add to Cart
+                Order Now
               </button>
             </div>
-          </div>
+          </div></a>
 
-          <div
+          <a href="order.html?itemName=Item%20Name&itemPrice=1000"><div
             class="bg-white p-6 rounded-lg shadow-lg hover:scale-110 hover:shadow-xl duration-300"
           >
             <img
@@ -254,12 +195,12 @@
                 data-name="Premium Headphones"
                 data-price="99.99"
               >
-                Add to Cart
+                Order Now
               </button>
             </div>
-          </div>
+          </div></a>
 
-          <div
+          <a href="order.html?itemName=Item%20Name&itemPrice=1000"><div
             class="bg-white p-6 rounded-lg shadow-lg hover:scale-110 hover:shadow-xl duration-300"
           >
             <img
@@ -278,10 +219,10 @@
                 data-name="Premium Headphones"
                 data-price="99.99"
               >
-                Add to Cart
+                Order Now
               </button>
             </div>
-          </div>
+          </div></a>
           <!-- More products can be added similarly -->
         </div>
       </div>
@@ -351,18 +292,18 @@
           >
             <div class="flex items-center mb-4">
               <img
-                src="https://via.placeholder.com/48"
+                src="https://cdn-icons-png.flaticon.com/512/1177/1177568.png"
                 alt="Customer"
                 class="w-12 h-12 rounded-full"
               />
               <div class="ml-4">
-                <h4 class="font-bold">Sarah Johnson</h4>
+                <h4 class="font-bold">Bilal Malik</h4>
                 <div class="text-yellow-400">★★★★★</div>
               </div>
             </div>
             <p class="text-gray-600 italic">
               "I'm absolutely blown away by the sound quality! These headphones
-              rival my $500 pair but at a fraction of the cost. The battery life
+              rival my 7,000 pair but at a fraction of the cost. The battery life
               is incredible too!"
             </p>
             <div class="mt-4 text-sm text-gray-500">Verified Buyer</div>
@@ -373,19 +314,17 @@
           >
             <div class="flex items-center mb-4">
               <img
-                src="https://via.placeholder.com/48"
+                src="https://cdn-icons-png.flaticon.com/512/1177/1177568.png"
                 alt="Customer"
                 class="w-12 h-12 rounded-full"
               />
               <div class="ml-4">
-                <h4 class="font-bold">Sarah Johnson</h4>
+                <h4 class="font-bold">Muhammad Arslan</h4>
                 <div class="text-yellow-400">★★★★★</div>
               </div>
             </div>
             <p class="text-gray-600 italic">
-              "I'm absolutely blown away by the sound quality! These headphones
-              rival my $500 pair but at a fraction of the cost. The battery life
-              is incredible too!"
+              میں نے یہاں سے ہیڈ فون خریدے اور ان کا معیار واقعی بہترین ہے۔ آواز کی کیفیت اور ڈیزائن دونوں بہت پسند آئے۔ شاپنگ کا تجربہ بہت اچھا رہا۔
             </p>
             <div class="mt-4 text-sm text-gray-500">Verified Buyer</div>
           </div>
@@ -395,19 +334,17 @@
           >
             <div class="flex items-center mb-4">
               <img
-                src="https://via.placeholder.com/48"
+                src="https://cdn-icons-png.flaticon.com/512/1177/1177568.png"
                 alt="Customer"
                 class="w-12 h-12 rounded-full"
               />
               <div class="ml-4">
-                <h4 class="font-bold">Sarah Johnson</h4>
+                <h4 class="font-bold">Laiba Munir</h4>
                 <div class="text-yellow-400">★★★★★</div>
               </div>
             </div>
             <p class="text-gray-600 italic">
-              "I'm absolutely blown away by the sound quality! These headphones
-              rival my $500 pair but at a fraction of the cost. The battery life
-              is incredible too!"
+              "Battery 5 ghnta chalti ha. Bohot zabrdst hain. Zaroor Recommend krti hun"
             </p>
             <div class="mt-4 text-sm text-gray-500">Verified Buyer</div>
           </div>
